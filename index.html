@@ -1,0 +1,643 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Nao Fesseha — Design, Fabrication & Drafting</title>
+
+<meta name="description" content="Nao Fesseha — Los Angeles-based museum preparator working across fabrication, technical drafting and exhibition environments.">
+
+<style>
+
+:root {
+  --ink: #171717;
+  --accent: #E87524;
+  --muted: #666666;
+  --line: #DDDDDD;
+  --white: #FFFFFF;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--white);
+  color: var(--ink);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 36px;
+}
+
+a {
+  color: inherit;
+  text-underline-offset: 4px;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #A8450C;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding-bottom: 18px;
+  border-bottom: 2px solid var(--ink);
+}
+
+.brand {
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: -0.7px;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+nav a {
+  font-size: 12px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.metadata {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 15px;
+}
+
+.metadata,
+.eyebrow,
+.footer-text {
+  font-size: 10px;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.hero {
+  padding: 60px 0 65px;
+}
+
+.hero h1 {
+  font-size: clamp(38px, 5.5vw, 58px);
+  line-height: 0.99;
+  letter-spacing: -2.8px;
+  font-weight: 750;
+  margin: 0;
+}
+
+.accent {
+  color: var(--accent);
+}
+
+section {
+  border-top: 1px solid var(--ink);
+  padding: 36px 0 44px;
+  scroll-margin-top: 25px;
+}
+
+.section-grid {
+  display: grid;
+  grid-template-columns: 1fr 2.4fr;
+  gap: 40px;
+}
+
+.section-heading h2 {
+  font-size: 29px;
+  line-height: 1.1;
+  letter-spacing: -1.1px;
+  margin: 10px 0;
+}
+
+.square {
+  width: 14px;
+  height: 14px;
+  background: var(--accent);
+  margin-bottom: 18px;
+}
+
+.about-copy {
+  max-width: 560px;
+}
+
+.about-copy p {
+  margin: 0 0 18px;
+}
+
+.about-copy p:last-child {
+  margin-bottom: 0;
+}
+
+.portfolio-title {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -1.2px;
+  margin: 0;
+}
+
+.portfolio-description {
+  color: var(--muted);
+  font-size: 14px;
+  margin: 8px 0 20px;
+}
+
+.portfolio-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 16px 0;
+  border-top: 1px solid var(--line);
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent);
+  width: 48px;
+  height: 48px;
+  font-size: 28px;
+  color: var(--ink);
+  flex-shrink: 0;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 125px 1fr;
+  gap: 20px;
+  padding: 19px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.timeline-item:first-child {
+  padding-top: 0;
+}
+
+.date {
+  color: var(--muted);
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 11px;
+  padding-top: 3px;
+}
+
+.organization {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.role {
+  font-size: 14px;
+  margin-top: 3px;
+}
+
+.description {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 5px;
+  line-height: 1.5;
+}
+
+.earlier {
+  margin-top: 35px;
+}
+
+.earlier .eyebrow {
+  margin-bottom: 12px;
+}
+
+.earlier .timeline-item {
+  padding: 12px 0;
+}
+
+.software-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+}
+
+.software-category {
+  border-top: 3px solid var(--accent);
+  padding-top: 14px;
+}
+
+.software-category h3 {
+  margin: 0 0 22px;
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+}
+
+.software-item {
+  margin-bottom: 19px;
+}
+
+.software-name {
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+.software-note {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px 0;
+  border-top: 2px solid var(--ink);
+}
+
+@media (max-width: 650px) {
+
+  .container {
+    padding: 24px 22px;
+  }
+
+  header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  nav {
+    gap: 14px;
+  }
+
+  .metadata {
+    font-size: 9px;
+  }
+
+  .hero {
+    padding: 45px 0;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+    letter-spacing: -2px;
+  }
+
+  .section-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  section {
+    padding: 28px 0 36px;
+  }
+
+  .timeline-item {
+    grid-template-columns: 95px 1fr;
+    gap: 12px;
+  }
+
+  .software-grid {
+    gap: 24px;
+  }
+
+  footer {
+    flex-wrap: wrap;
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+
+  <a class="brand" href="#">
+    Nao Fesseha<span class="accent">.</span>
+  </a>
+
+  <nav aria-label="Main navigation">
+    <a href="#about">About</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
+    <a href="#software">Software</a>
+  </nav>
+
+</header>
+
+<main>
+
+<div class="metadata">
+  <span>Los Angeles, California</span>
+  <span>Independent Portfolio / 2026</span>
+</div>
+
+<div class="hero">
+  <h1>
+    Design.<br>
+    Fabrication.<br>
+    Drafting<span class="accent">.</span>
+  </h1>
+</div>
+
+<!-- 01 ABOUT -->
+
+<section id="about" class="section-grid">
+
+  <div class="section-heading">
+    <div class="square"></div>
+    <div class="eyebrow">01 — Profile</div>
+    <h2>About.</h2>
+  </div>
+
+  <div class="about-copy">
+
+    <p>Hey there, I'm Nao, an LA-based museum preparator with a background in curatorial studies, interior design, and exhibition fabrication.</p>
+
+    <p>I'm currently developing my technical drafting practice and seeking opportunities in CAD, exhibition design, and experiential environments.</p>
+
+    <p>I also create comics through <a href="https://www.instagram.com/saint.yared/" target="_blank" rel="noopener noreferrer">Saint Yared Studios</a></p>
+
+  </div>
+
+</section>
+
+<!-- 02 PORTFOLIO -->
+
+<section id="portfolio" class="section-grid">
+
+  <div class="section-heading">
+    <div class="eyebrow">02 — Selected Works</div>
+    <h2>Portfolio.</h2>
+  </div>
+
+  <div>
+
+    <h3 class="portfolio-title">
+      Selected Works<span class="accent">.</span>
+    </h3>
+
+    <p class="portfolio-description">
+      Exhibitions / Fabrication / Technical Studies
+    </p>
+
+    <div class="portfolio-link" id="portfolio-download">
+      <span>Portfolio PDF — Coming soon</span>
+      <span class="arrow" aria-hidden="true">&#8599;</span>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- 03 EXPERIENCE -->
+
+<section id="experience" class="section-grid">
+
+  <div class="section-heading">
+    <div class="eyebrow">03 — Professional Background</div>
+    <h2>Experience.</h2>
+  </div>
+
+  <div>
+
+    <div class="timeline-item">
+      <div class="date">2026 — Present</div>
+      <div>
+        <div class="organization">Autry Museum of the American West</div>
+        <div class="role">Preparator I</div>
+        <div class="description">Exhibition installation, fabrication and collections handling.</div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="date">2024 — 2026</div>
+      <div>
+        <div class="organization">Crate 88 Fine Art Handling</div>
+        <div class="role">Fabrication &amp; Installation Technician</div>
+        <div class="description">Custom fabrication, protective structures and fine art installation.</div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="date">2024</div>
+      <div>
+        <div class="organization">Solid Art Services</div>
+        <div class="role">Art Installer / Fine Art Handler</div>
+        <div class="description">Artwork installation, packing and transportation.</div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="date">2023 — 2024</div>
+      <div>
+        <div class="organization">OC Millworks</div>
+        <div class="role">Cabinet &amp; Component Fabrication Technician</div>
+        <div class="description">Architectural millwork, cabinetry and component assembly.</div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="date">2022 / 2024</div>
+      <div>
+        <div class="organization">Mystery Projects — Sister Midnight I &amp; II</div>
+        <div class="role">Scenic Build &amp; Operations Support</div>
+        <div class="description">Spatial layouts, scenic fabrication and immersive environments.</div>
+      </div>
+    </div>
+
+    <div class="earlier">
+
+      <div class="eyebrow">Earlier Cultural Experience</div>
+
+      <div class="timeline-item">
+        <div class="date">2019</div>
+        <div class="organization">Acid-Free</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="date">2018</div>
+        <div class="organization">there-there</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="date">2016</div>
+        <div class="organization">Whitney Museum of American Art</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="date">2014</div>
+        <div class="organization">Museum of the African Diaspora</div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- 04 EDUCATION -->
+
+<section id="education" class="section-grid">
+
+  <div class="section-heading">
+    <div class="eyebrow">04 — Academic &amp; Technical Development</div>
+    <h2>Education.</h2>
+  </div>
+
+  <div>
+
+    <div class="timeline-item">
+      <div class="date">2026</div>
+      <div>
+        <div class="organization">Los Angeles Cleantech Incubator</div>
+        <div class="role">Product Design &amp; Development Fellowship</div>
+        <div class="description">In progress</div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="date">2026</div>
+      <div>
+        <div class="organization">Long Beach City College</div>
+        <div class="role">AutoCAD coursework</div>
+        <div class="description">In progress</div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="date">2025 — 2026</div>
+      <div>
+        <div class="organization">Citrus College, Grossmont College</div>
+        <div class="role">College Algebra, Trigonometry &amp; Physics</div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="date">2019 — 2021</div>
+      <div>
+        <div class="organization">Los Angeles ORT College</div>
+        <div class="role">Computer-Aided Drafting &amp; Design coursework</div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="date">2016</div>
+      <div>
+        <div class="organization">Moore College of Art &amp; Design</div>
+        <div class="role">BFA, Curatorial Studies</div>
+        <div class="description">Minor in Interior Design</div>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- 05 SOFTWARE -->
+
+<section id="software" class="section-grid">
+
+  <div class="section-heading">
+    <div class="eyebrow">05 — Digital Toolkit</div>
+    <h2>Software.</h2>
+  </div>
+
+  <div class="software-grid">
+
+    <div class="software-category">
+
+      <h3>CAD &amp; Modeling</h3>
+
+      <div class="software-item">
+        <div class="software-name">AutoCAD</div>
+        <div class="software-note">Current coursework</div>
+      </div>
+
+      <div class="software-item">
+        <div class="software-name">SOLIDWORKS</div>
+        <div class="software-note">Training in progress</div>
+      </div>
+
+      <div class="software-item">
+        <div class="software-name">Fusion 360</div>
+        <div class="software-note">Introductory experience</div>
+      </div>
+
+    </div>
+
+    <div class="software-category">
+
+      <h3>Visual Communication</h3>
+
+      <div class="software-item">
+        <div class="software-name">Adobe Photoshop</div>
+      </div>
+
+      <div class="software-item">
+        <div class="software-name">Adobe Illustrator</div>
+      </div>
+
+      <div class="software-item">
+        <div class="software-name">Adobe InDesign</div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+<footer>
+
+  <span class="footer-text">
+    Nao Fesseha &copy; 2026
+  </span>
+
+  <span class="footer-text">
+    Design &amp; the Built Environment
+  </span>
+
+</footer>
+
+</div>
+
+</body>
+</html>
