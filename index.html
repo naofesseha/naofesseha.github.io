@@ -7,7 +7,7 @@
 
 <title>Nao Fesseha — Design, Fabrication & Drafting</title>
 
-<meta name="description" content="Nao Fesseha — Los Angeles-based museum preparator working across fabrication, technical drafting and exhibition environments.">
+<meta name="description" content="Nao Fesseha — Los Angeles-based museum preparator working across exhibition fabrication, technical drafting and spatial environments.">
 
 <style>
 
@@ -96,21 +96,43 @@ nav a {
   color: var(--muted);
 }
 
+/* HERO AND PORTRAIT */
+
 .hero {
-  padding: 60px 0 65px;
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  align-items: center;
+  gap: 40px;
+  padding: 40px 0 45px;
 }
 
 .hero h1 {
-  font-size: clamp(38px, 5.5vw, 58px);
-  line-height: 0.99;
-  letter-spacing: -2.8px;
+  font-size: clamp(36px, 5vw, 54px);
+  line-height: 1.02;
+  letter-spacing: -2.5px;
   font-weight: 750;
   margin: 0;
+}
+
+.hero-portrait {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.hero-portrait img {
+  display: block;
+  width: 100%;
+  max-width: 240px;
+  height: auto;
+  filter: grayscale(100%);
 }
 
 .accent {
   color: var(--accent);
 }
+
+/* SECTION LAYOUT */
 
 section {
   border-top: 1px solid var(--ink);
@@ -150,6 +172,8 @@ section {
   margin-bottom: 0;
 }
 
+/* PORTFOLIO */
+
 .portfolio-title {
   font-size: 32px;
   font-weight: 700;
@@ -185,6 +209,8 @@ section {
   color: var(--ink);
   flex-shrink: 0;
 }
+
+/* EXPERIENCE AND EDUCATION */
 
 .timeline-item {
   display: grid;
@@ -235,6 +261,8 @@ section {
   padding: 12px 0;
 }
 
+/* SOFTWARE */
+
 .software-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -270,6 +298,8 @@ section {
   color: var(--muted);
 }
 
+/* FOOTER */
+
 footer {
   display: flex;
   justify-content: space-between;
@@ -277,6 +307,8 @@ footer {
   padding: 20px 0;
   border-top: 2px solid var(--ink);
 }
+
+/* MOBILE RESPONSIVENESS */
 
 @media (max-width: 650px) {
 
@@ -299,12 +331,18 @@ footer {
   }
 
   .hero {
-    padding: 45px 0;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 16px;
+    padding: 35px 0;
   }
 
   .hero h1 {
-    font-size: 42px;
-    letter-spacing: -2px;
+    font-size: clamp(24px, 6vw, 40px);
+    letter-spacing: -1.2px;
+  }
+
+  .hero-portrait img {
+    max-width: 160px;
   }
 
   .section-grid {
@@ -331,10 +369,28 @@ footer {
 
 }
 
+@media (max-width: 360px) {
+
+  .hero {
+    gap: 10px;
+  }
+
+  .hero h1 {
+    font-size: 23px;
+  }
+
+  .software-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
 @media (prefers-reduced-motion: reduce) {
+
   html {
     scroll-behavior: auto;
   }
+
 }
 
 </style>
@@ -367,12 +423,25 @@ footer {
   <span>Independent Portfolio / 2026</span>
 </div>
 
+<!-- HERO -->
+
 <div class="hero">
-  <h1>
-    Design.<br>
-    Fabrication.<br>
-    Drafting<span class="accent">.</span>
-  </h1>
+
+  <div class="hero-copy">
+    <h1>
+      Design.<br>
+      Fabrication.<br>
+      Drafting<span class="accent">.</span>
+    </h1>
+  </div>
+
+  <div class="hero-portrait">
+    <img src="portrait.png"
+         alt="Portrait of Nao Fesseha"
+         width="1174"
+         height="1280">
+  </div>
+
 </div>
 
 <!-- 01 ABOUT -->
